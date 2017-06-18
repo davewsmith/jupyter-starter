@@ -31,7 +31,7 @@ The latter will report out a URL that includes a login token. Copy that URL and 
 
 `^C` stops the notebook server.
 
-## Stopping and restart the server
+## Stopping and restarting the Virtual Machine
 
 To suspend the VM, exit to the host and
 
