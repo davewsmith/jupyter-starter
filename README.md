@@ -1,6 +1,6 @@
 # Jupyter Starter
 
-Set up a VirtualBox VM with a Jupyter notebook server and basic Python Data Science libraries.
+Set up a VirtualBox VM with a Jupyter notebook server and basic Python3 Data Science libraries.
 
 
 ## Requirements
