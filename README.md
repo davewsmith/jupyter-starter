@@ -17,7 +17,7 @@ gets you the former. `http://vagrant.io` gets you the latter.
 
     vagrant up
 
-Depending on various factors, this takes between 8 and 20 minutes on my laptop.
+Depending on various factors (moon, tailwind, internet provider) this takes between 8 and 20 minutes on my laptop.
 
 ## Running the Jupyter notebook server
 
