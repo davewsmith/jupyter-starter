@@ -10,7 +10,7 @@ sudo apt-get install -y python3-pip
 sudo -H pip3 install --upgrade pip
 
 # Install the basic data science add-ons
-sudo -H pip3 install matplotlib numpy scipy sklearn pandas
+sudo -H pip3 install matplotlib numpy scipy sklearn pandas seaborn
 
 # OpenCV provides the cv2 bindings for image manipulation
 sudo -H pip3 install opencv-python
