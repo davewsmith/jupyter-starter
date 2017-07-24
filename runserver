@@ -1,3 +1,7 @@
 #!/bin/sh
 
-jupyter notebook --ip=0.0.0.0 --notebook-dir=notebooks --no-browser
+notebook_dir=${1:-notebooks}
+
+[ -d "${notebook_dir}" ] || mkdir "${notebook_dir}"
+
+jupyter notebook --ip=0.0.0.0 "--notebook-dir=${notebook_dir}" --no-browser
