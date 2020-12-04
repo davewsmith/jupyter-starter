@@ -1,3 +1,4 @@
+ubuntu*.log
 *.pyc
 .vagrant
 notebooks
