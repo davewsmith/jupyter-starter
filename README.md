@@ -1,11 +1,9 @@
 # Jupyter Starter
 
-Set up a VirtualBox VM with a Jupyter notebook server and basic Python3 Data Science libraries.
+Set up a VirtualBox VM with a Jupyter Labs server and basic Python3 Data Science libraries.
 
 
 ## Requirements
-
-This was developed on a laptop running Ubuntu 14.04.
 
 Building the VM requires VirtualBox and Vagrant
 
@@ -19,7 +17,9 @@ gets you the former. `http://vagrant.io` gets you the latter.
 
 Depending on various factors (moon, tailwind, internet provider) provisioning and starting the VM takes between 8 and 20 minutes on my laptop.
 
-## Running the Jupyter notebook server
+Edit `Vagrantfile` to customize which packages get installed at VM build time.
+
+## Running the Jupyter Labs server
 
 With a VM running,
 
@@ -37,24 +37,22 @@ To specify an alternate notebook directory, use
 
     ./runserver path/to/notebooks
 
-## Stopping the Jupyter notebook server
+## Stopping the Jupyter Labs server
 
-`^C` stops the notebook server.
+From a browser, select `File / Shut Down`.
+
+Or, from inside the VM, `^C` stops the server.
 
 ## Stopping and restarting the Virtual Machine
 
-To suspend the VM, exit to the host and
+From outside the VM, `vagrant suspect` will suspend a VM, and `vagrant resume` will reactivate it.
 
-    vagrant suspend
+Alternatively, `vagrant halt` to stop it entirely, and `vagrant up` to bring it back to life.
 
-Then, to resume
-
-    vagrant resume
-
-Suspend before you reboot your laptop/server.
-VirtualBox is fairly intolerant of being stopped suddenly, and you might have to `vagrant destroy` / `vagrant up` to provision a fresh VM.
+Do one of these before you reboot your laptop/server.
+VirtualBox is fairly intolerant of being stopped suddenly,
+and you might have to `vagrant destroy` / `vagrant up` to provision a fresh VM.
 
 ## License
 
 None. There's nothing original here.
-
