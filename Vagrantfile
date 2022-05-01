@@ -1,35 +1,25 @@
 # vi: set ft=ruby :
 
 $provision = <<SCRIPT
+
 sudo apt-get update
-sudo apt-get upgrade
 
-sudo apt-get install -y git
+sudo apt-get install -y python3.8-venv
+python3 -m venv venv
+. venv/bin/activate
 
-# bootstrap a recent pip3
-sudo apt-get install -y python3-pip
-sudo -H pip3 install --upgrade pip
+pip install -r requirements-scraping.txt
+pip install -r requirements-datascience.txt
+pip install -r requirements-vision.txt
 
-# Install some some support for scraping
-sudo -H pip3 install requests beautifulsoup4
-
-# Install basic data science add-ons
-sudo -H pip3 install matplotlib numpy scipy sklearn pandas seaborn
-
-# OpenCV provides the cv2 bindings for image manipulation
-#  N.B. opencv-contrib-python includes contrib.extras
-sudo -H pip3 install opencv-python
-
-# And finally, Jupyter notebooks
-sudo -H pip3 install jupyter
+pip install jupyterlab
 
 SCRIPT
 
 
-
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-    config.vm.box = "ubuntu/bionic64"
+    config.vm.box = "ubuntu/focal64"  # Ubuntu 20.04
     config.vm.network "forwarded_port", guest: 8888, host: 8888
 
     config.vm.provider "virtualbox" do |vb|
