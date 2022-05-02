@@ -4,4 +4,4 @@ notebook_dir=${1:-notebooks}
 
 [ -d "${notebook_dir}" ] || mkdir "${notebook_dir}"
 
-jupyter-lab --ip=0.0.0.0 "--notebook-dir=${notebook_dir}" --no-browser
+venv/bin/jupyter-lab --ip=0.0.0.0 "--notebook-dir=${notebook_dir}" --no-browser
